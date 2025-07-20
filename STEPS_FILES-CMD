@@ -87,7 +87,7 @@ vi tomcat-users.xml
 <role rolename="manager-status"/>
 <user username="admin" password="admin" roles="manager-gui, manager-script, manager-jmx, manager-status"/>
 <user username="deployer" password="deployer" roles="manager-script"/>
-<user username="tomcat" password="secret" roles="manager-gui"/>
+<user username="tomcat" password="secrete" roles="manager-gui"/>
 
 # creating link file to start and shutdown tomcat
 
@@ -96,9 +96,9 @@ ln -s /opt/tomcat/bin/shutdown.sh /usr/local/bin/tomcatdown
      -----------------NEXT STEP----------------
     # Integrate Tomcat with Jenkins
     # deploy to container- plugin
- # go to credential- cfreate a secrete for deployer-role( username- deployer & password-deployer), check in your role section(2nd role)
+ # go to credential- create a secrete for deployer-role( username- deployer & password-deployer), check in your role section (2nd role)
  # create a job - for deploy to tomcat container
- #job -git-clean install- postbuild(deploy to container)- add tomcat-apply & save.
+ #job -git-clean install- postbuild (deploy to container)- add tomcat-apply & save.
 
 
 
