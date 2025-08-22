@@ -18,8 +18,11 @@ ls
 cp -R * ../webapps/  #copied into webapp.
 
   #now check your tomcat is avaiable on your browser.
-  # but this temporary solution, means if you stops this container and create another container with the same image, again the same issue will appear.
+
+
+  # But this temporary solution, means if you stops this container and create another container with the same image, again the same issue will appear.
   # so we have to fix this for permanently( by using docker file)
+
  vi Dockerfile    # dockerfile
    -- FROM tomcat:latest
    -- RUN cp -R /usr/local/tomcat/webapps.dist/* /usr/local/tomcat/webapps
@@ -34,7 +37,7 @@ docker run -d --name demotomcat-container -p 8085:8080 demotomcat
 #add dockerhost to jenkins "configure systems"
 -------adding a user= dockeradmin 
 cat /etc/passwd   # to check current user
-cat /etc/group    # to cjeck grou
+cat /etc/group    # to check group
 
 adduser dockeradmin  #user add
 passwd dockeradmin   # password
@@ -60,7 +63,7 @@ ll # to check permission
 now to store artifact on this docker directory, will change dockerfile
 cd
 mv Dockerfile /opt/docker/
-# now to to dockerfile and give permission to dockeradmin
+# now go to dockerfile and give permission to dockeradmin
 chown -R dockeradmin:dockeradmin /opt/docker
 ll # check permission now
 
